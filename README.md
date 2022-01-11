@@ -1,2 +1,2 @@
-# Coherent_Ising-_Machine
+# Coherent_Ising_Machine
 A project to implement the Poor man's Ising machine
