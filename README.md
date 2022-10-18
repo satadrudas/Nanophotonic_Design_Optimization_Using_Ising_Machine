@@ -1,5 +1,6 @@
 # Design Otimization using Ising Machine
-In this project we implement the optimization algorithm in [1] on an opptoelectronic Ising machine that we built similar to the one in [2]. The optimization problem that we chose is 2D optimization of photonics devices.<br />
+In this project we implement the optimization algorithm in [1] on an optoelectronic Ising machine that we built similar to the one in [2]. The difference is that we implement on a different hardware setup as opposed to D-Wave quantum annealers which were used as the Ising solver in [1]. The optimization problem that we chose is 2D optimization of photonics devices.<br />.
+
 
 The Binary Variational Autoencoder (bVAE) used here is structured as: x input layers -> hidden layer(512 nodes)-> hidden layer (xx)-> bottleneck layer(500??)-> gumbell layer (500??)-> hidden layer(xx)-> hidden layer(512)->output layer(x)<br />
 
