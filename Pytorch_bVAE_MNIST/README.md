@@ -1,1 +1,2 @@
-
+This directory contains the implemententation of bVAE in pytorch. 
+Note: When loading a pretrained model to continue training, make sure that the lambda (the temperature) is where we left it at...
