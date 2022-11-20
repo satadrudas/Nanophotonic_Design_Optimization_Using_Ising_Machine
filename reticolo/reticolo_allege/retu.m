@@ -70,7 +70,7 @@ function [w,xdisc]=retu(init,x,epx,y,epy,ww);
 %
 %  on peut aussi au lieu d'une base homogene avoir un reseau  1 D
 %  decrit par un tableau de points de discontinuites suivi du tableau des indices a gauche des points
-%  les points de discontinuitee doivent être en ordre croissant sur un intervalle de longueur STRICTEMENT inferieure au pas 
+%  les points de discontinuitee doivent ï¿½tre en ordre croissant sur un intervalle de longueur STRICTEMENT inferieure au pas 
 %  ET ETRE AU MOINS 2  
 %      si ces tableaux sont des vecteurs lignes le reseau est invariant en y 
 %                       |  |    |
@@ -103,7 +103,7 @@ function [w,xdisc]=retu(init,x,epx,y,epy,ww);
 %  texture = {x1,n1,pol,k0,un} 
 %
 %  profil d'une tranche du reseau
-%  décrite par un tableau de points de discontinuites x1 suivi du tableau n1 des indices a gauche des points
+%  dï¿½crite par un tableau de points de discontinuites x1 suivi du tableau n1 des indices a gauche des points
 %  les points de discontinuitee doivent etre en ordre croissant sur un intervalle de longueur STRICTEMENT inferieure au pas 
 %  ET ETRE AU MOINS 2  
 %
@@ -338,7 +338,7 @@ mmx=size(xx,2);mmy=size(yy,2);x=[0,x];y=[0,y];xx=[0,xx];yy=[0,yy];
 % end;end;
 % 
 
-% attention à xx et x !
+% attention ï¿½ xx et x !
 Ix=1:mmmx;for ix=1:mmx;Ix(xxx>xx(ix)&xxx<=xx(ix+1))=ix;end;
 Iy=1:mmmy;for iy=1:mmy;Iy(yyy>yy(iy)&yyy<=yy(iy+1))=iy;end;
 uuu=uu(Ix,Iy,:);
@@ -403,7 +403,6 @@ a21=s*c*mean((epy-epx)./(epx*c^2+epy*s^2));
 a22=mean(epx.*epy./(epx*c^2+epy*s^2));
 %epxx  epyy epzz epxy
 ep=[(s^2*(a11*a22+a21^2)-2*c*s*a21+c^2)/a11;(c^2*(a11*a22+a21^2)+2*c*s*a21+s^2)/a11;1./mean(1./epz);(c*s*(1-a11*a22-a21^2)+(c^2-s^2)*a21)/a11];
-
 
 
 
