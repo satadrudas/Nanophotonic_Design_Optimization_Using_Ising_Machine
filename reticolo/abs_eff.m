@@ -42,7 +42,7 @@ end
 NumPol = length(Polarizations); 
 
 % Define grid for the device
-[xGrid, yGrid, GridScale] = DefineGrid(Grid, Period, Wavelength); %xgrid and ygrid are the center cordinates of each box
+[xGrid, yGrid, GridScale] = DefineGrid_dataset(target_angle, Wavelength); %xgrid and ygrid are the center cordinates of each box
 Nx = length(xGrid); %Number of x grid points
 Ny = length(yGrid); %Number of y grid points
 
