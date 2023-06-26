@@ -1,1 +1,1 @@
-
+In the notebooks here, I have tried to implement adjoint optimization for designing a Silicon Photonic 3dB directional coupler. In the 2D optimization you can see that for diierent initial conditions (permittivity distributions) we get different designs, though not necessarily with good results. For the 3D optimization a computing cluster is needed ( the 3D splitter took over night on a MacBook for just 4-5 iterations ). The 3D optimization of the 3dB directional  coupler needs to be done in a computing cluster the speed ut up.
