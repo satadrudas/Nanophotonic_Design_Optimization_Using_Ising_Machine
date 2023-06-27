@@ -6,6 +6,8 @@ For designing devices which are phase sensitive such as the directional coupler,
 
 The "Sandbox" notebooks are just few examples which I tried when I was learning to use MEEP for adjoint optimization.
 
+*TODO*: Try to use [ceviche](https://github.com/fancompute/ceviche) and [Angler](https://github.com/fancompute/angler/tree/master) to generate the device designs butget the figure-of-merit from [MEEP](https://github.com/NanoComp/meep)
+
 ## References
 1. [Phase-Injected Topology Optimization for Scalable and Interferometrically Robust Photonic Integrated Circuits - Alec M. Hammond, Joel B. Slaby, Michael J. Probst, and Stephen E. Ralph ACS Photonics 2023](https://pubs.acs.org/doi/10.1021/acsphotonics.2c01016)
 
