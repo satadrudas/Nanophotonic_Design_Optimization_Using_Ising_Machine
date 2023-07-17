@@ -14,8 +14,10 @@ The bVAE used here is structured as: x input layers -> hidden layer(512 nodes)->
 
 
 
+
 ## References: <br />
 1. [Machine Learning Framework for Quantum Sampling of HighlyConstrained, Continuous Optimization Problems ](https://aip.scitation.org/doi/10.1063/5.0060481)<br />
 2. [A poor man’s coherent Ising machine based on opto-electronic feedback systems for solving optimization problems](https://www.nature.com/articles/s41467-019-11484-3)<br />
+3. [AWS instance selector](https://d1.awsstatic.com/AWS%20EC2%20for%20HPC%20Solution%20brief%20Final.pdf)
 
 
