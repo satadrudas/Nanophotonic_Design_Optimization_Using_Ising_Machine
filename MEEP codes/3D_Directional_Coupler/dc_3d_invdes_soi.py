@@ -257,6 +257,7 @@ if __name__ == '__main__':
     parser.add_argument('-seed', type=float, default=4929, help='seed for the numpy random generator')
     parser.add_argument('-waveguide_length', type=float, default=0.5, help='length of the waveguide in micrometeter')
     parser.add_argument('-waveguide_width', type=float, default=0.5, help='width of the waveguide in micrometeter')
+    parser.add_argument('-waveguide_thickness', type=float, default=0.22, help='thickness of the waveguide in micrometeter')
     parser.add_argument('-design_region_length', type=float, default=7.0, help='length of the design in micrometeter')
     parser.add_argument('-design_region_width', type=float, default=3.0, help='width of the design in micrometeter')
     parser.add_argument('-minimum_length', type=float, default=0.09, help='minimum feature length in micrometer')
@@ -275,7 +276,7 @@ seed=1000 ..
 waveguide_width=0.5 ..
 design_region_length=7 ..
 design_region_width=3 ..
-design_region_thickness= 0.22
+design_region_thickness= 0.22 ..
 waveguide_length=0.5 ..
 minimum_length=0.09 ..
 wavelength=1.55 ..
