@@ -218,8 +218,14 @@ def main(args):
     solver.set_maxeval(final_update_factor)
     x[:] = solver.optimize(x)
 
-    np.save("design_2d_dc.npy",x)
+    sim_data_string=str(design_region_length)+"x"+str(design_region_width)+"_"+str(cur_beta)+"_"+str(beta_scale)+"_"+str(num_betas)+"_"+str(update_factor)
+
+    evaluation_history = np.array(evaluation_history)
+    np.save("evaluation_history_"+sim_data_string+".npy",x)
+
+    np.save("3d_dc"+sim_data_string+".npy",x)
     # extract evaluation_history and plot 10*np.log10(0.5*np.array(evaluation_history))
+
 
 
 if __name__ == '__main__':
