@@ -206,17 +206,21 @@ def main(args):
 
 
 
-    final_beta = 10000
-    final_update_factor = 1
+    update_factor = 5
+    num_beta=6
     print("----------------------------------------------------------------")
     print('final binarization')
         
-    solver = nlopt.opt(algorithm, n)
-    solver.set_lower_bounds(lb)
-    solver.set_upper_bounds(ub)
-    solver.set_max_objective(lambda a,g: f(a,g,final_beta))
-    solver.set_maxeval(final_update_factor)
-    x[:] = solver.optimize(x)
+    for iters in range(num_betas): # the main beta increment loop
+        print("current beta: ",cur_beta)
+        
+        solver = nlopt.opt(algorithm, n)
+        solver.set_lower_bounds(lb)
+        solver.set_upper_bounds(ub)
+        solver.set_max_objective(lambda a,g: f(a,g,cur_beta))
+        solver.set_maxeval(update_factor)
+        x[:] = solver.optimize(x) # iterates update_factor times
+        cur_beta = cur_beta*beta_scale
 
     sim_data_string=str(design_region_length)+"x"+str(design_region_width)+"_"+str(cur_beta)+"_"+str(beta_scale)+"_"+str(num_betas)+"_"+str(update_factor)
 
