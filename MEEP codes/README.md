@@ -2,9 +2,9 @@
 
 In the notebooks here, I have tried to implement adjoint optimization for designing a Silicon Photonic devices.<br/><br/>
 
-For designing devices which are phase sensitive such as the directional coupler, a "Phase injected Topology Optimization" technique [1] was used. In the 2D optimization you can see that for diierent initial conditions (permittivity distributions) we get different designs, though not necessarily with good results. For the 3D optimization a computing cluster is needed ( the 3D splitter took over night on a MacBook for just 4-5 iterations ). The 3D optimization of the 3dB directional  coupler needs to be done in a computing cluster the speed ut up.<br/><br/>
+For designing devices which are phase sensitive such as the directional coupler, a "Phase injected Topology Optimization" technique [1] was used. In the 2D optimization you can see that for different initial conditions (permittivity distributions) we get different designs, though not necessarily with good results. For the 3D optimization a computing cluster is needed ( the 3D splitter took over night on a MacBook for just 4-5 iterations ). The 3D optimization of the 3dB directional  coupler needs to be done in a computing cluster. Meep in mind the FDTD is not compute intentive but it is need very high memory-bandwidth.<br/><br/>
 
-The "Sandbox" notebooks are just few examples which I tried when I was learning to use MEEP for adjoint optimization.
+The "Sandbox" notebooks are just few examples which I created when I was learning to use MEEP for adjoint optimization.
 
 *TODO*: Try to use [ceviche](https://github.com/fancompute/ceviche) and [Angler](https://github.com/fancompute/angler/tree/master) to generate the device designs butget the figure-of-merit from [MEEP](https://github.com/NanoComp/meep)
 
