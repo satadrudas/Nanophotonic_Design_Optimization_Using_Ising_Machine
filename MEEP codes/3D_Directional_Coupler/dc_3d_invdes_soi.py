@@ -225,17 +225,21 @@ def main(args):
 
 
 
-    final_beta = 10000
-    final_update_factor = 1
+    update_factor = 5
+    num_beta=6
     print("----------------------------------------------------------------")
     print('final binarization')
         
-    solver = nlopt.opt(algorithm, n)
-    solver.set_lower_bounds(lb)
-    solver.set_upper_bounds(ub)
-    solver.set_max_objective(lambda a,g: f(a,g,final_beta))
-    solver.set_maxeval(final_update_factor)
-    x[:] = solver.optimize(x)
+    for iters in range(num_betas): # the main beta increment loop
+        print("current beta: ",cur_beta)
+        
+        solver = nlopt.opt(algorithm, n)
+        solver.set_lower_bounds(lb)
+        solver.set_upper_bounds(ub)
+        solver.set_max_objective(lambda a,g: f(a,g,cur_beta))
+        solver.set_maxeval(update_factor)
+        x[:] = solver.optimize(x) # iterates update_factor times
+        cur_beta = cur_beta*beta_scale
 
     sim_data_string=str(design_region_length)+"x"+str(design_region_width)+"_"+str(cur_beta)+"_"+str(beta_scale)+"_"+str(num_betas)+"_"+str(update_factor)
 
@@ -257,7 +261,6 @@ if __name__ == '__main__':
     parser.add_argument('-seed', type=float, default=4929, help='seed for the numpy random generator')
     parser.add_argument('-waveguide_length', type=float, default=0.5, help='length of the waveguide in micrometeter')
     parser.add_argument('-waveguide_width', type=float, default=0.5, help='width of the waveguide in micrometeter')
-    parser.add_argument('-waveguide_thickness', type=float, default=0.22, help='thickness of the waveguide in micrometeter')
     parser.add_argument('-design_region_length', type=float, default=7.0, help='length of the design in micrometeter')
     parser.add_argument('-design_region_width', type=float, default=3.0, help='width of the design in micrometeter')
     parser.add_argument('-minimum_length', type=float, default=0.09, help='minimum feature length in micrometer')
@@ -276,7 +279,7 @@ seed=1000 ..
 waveguide_width=0.5 ..
 design_region_length=7 ..
 design_region_width=3 ..
-design_region_thickness= 0.22 ..
+design_region_thickness= 0.22
 waveguide_length=0.5 ..
 minimum_length=0.09 ..
 wavelength=1.55 ..
