@@ -52,7 +52,8 @@ def main(args):
     Ny = int(design_region_resolution*design_region_width)
     Nz = int(design_region_resolution*design_region_thickness)
 
-    design_variables = mp.MaterialGrid(mp.Vector3(Nx,Ny),Air,Si,grid_type="U_MEAN", do_averaging = False)### not giving a Nz because we want it to extent in the z axis so you give the z direction width in the volumn
+    design_variables = mp.MaterialGrid(mp.Vector3(Nx,Ny),Air,Si,grid_type="U_MEAN", do_averaging = True)### not giving a Nz because we want it to extent in the z axis so you give the z direction width in the volumn
+    # do_averaging is for sub_pixel smoothing
     design_region = mpa.DesignRegion(design_variables,
         volume=mp.Volume(center=mp.Vector3(), size=mp.Vector3(design_region_length, design_region_width, design_region_thickness)))###
         
