@@ -15,6 +15,8 @@ for i in range(20):
 sim.plot2D()
 ```
 
+Also, plotting of insertion loss(dB)
+
 
 The "Sandbox" notebooks are just few examples which I created when I was learning to use MEEP for adjoint optimization.
 
