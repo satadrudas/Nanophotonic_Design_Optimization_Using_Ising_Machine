@@ -1,5 +1,7 @@
 ## Overview
 
+PLEASE NOTE THAT THE `evaluation_history` plot is wrong in these notebooks...made a silly mistake<br/><br/>
+
 In the notebooks here, I have tried to implement adjoint optimization for designing a Silicon Photonic devices.<br/><br/>
 
 For designing devices which are phase sensitive such as the directional coupler, a "Phase injected Topology Optimization" technique [1] was used. In the 2D optimization you can see that for different initial conditions (permittivity distributions) we get different designs, though not necessarily with good results. For the 3D optimization a computing cluster is needed ( the 3D splitter took over night on a MacBook for just 4-5 iterations ). The 3D optimization of the 3dB directional  coupler needs to be done in a computing cluster. Meep in mind the FDTD is not compute intentive but it is need very high memory-bandwidth.<br/>
