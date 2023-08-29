@@ -1,6 +1,6 @@
 ## Overview
 
-PLEASE NOTE THAT THE `evaluation_history` plot is wrong in these notebooks...made a silly mistake<br/><br/>
+PLEASE NOTE THAT THE ```evaluation_history``` plot is wrong in these notebooks...made a silly mistake<br/><br/>
 
 In the notebooks here, I have tried to implement adjoint optimization for designing a Silicon Photonic devices.<br/><br/>
 
