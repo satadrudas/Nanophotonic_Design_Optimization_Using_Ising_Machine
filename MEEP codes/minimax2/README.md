@@ -1,1 +1,1 @@
-fresh codes with minimax
+fresh codes with minimax in optical C band
