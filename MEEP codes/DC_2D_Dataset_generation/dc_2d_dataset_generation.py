@@ -698,13 +698,19 @@ def main(args):
             
         # design index, design, evaluation history, epivar history
             
-        design_data.append(np.array(i))
-        design_data.append(mapping(optimal_design_weights, eta_i, beta).reshape(Nx,Ny))
-        design_data.append(np.array(evaluation_history))
-        design_data.append(np.array(epivar_history))
-        design_data.append(top_profile)
-        design_data.append(bottom_profile)
-        design_data.append(ref_profile)
+        design_data.append(np.array(i)) #0
+        design_data.append(mapping(optimal_design_weights, eta_i, beta).reshape(Nx,Ny)) #1
+        design_data.append(resolution) #2
+        design_data.append(design_region_resolution) #3
+        design_data.append(design_region_length) #4
+        design_data.append(design_region_width) #5
+        design_data.append(arm_separation) #6
+        design_data.append(np.array(evaluation_history)) #7
+        design_data.append(np.array(epivar_history)) #8
+        design_data.append(top_profile) #9
+        design_data.append(bottom_profile) #10
+        design_data.append(ref_profile) #11
+
 
         np.save("test_data/design_data"+str(i),np.array(design_data, dtype=object))
         
