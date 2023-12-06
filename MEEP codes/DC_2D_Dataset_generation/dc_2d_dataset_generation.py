@@ -11,7 +11,7 @@ import argparse
 
 def main(args):
 
-    seed =  np.random.randint(100000) #args.seed
+    seed =  args.seed # when working with multiple nodes, the seed should be same for all processes. Read "https://meep.readthedocs.io/en/latest/Parallel_Meep/#optimization-studies-of-parallel-simulations"
     np.random.seed(seed)
     mp.verbosity(0)
 
