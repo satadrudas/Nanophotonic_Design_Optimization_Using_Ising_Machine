@@ -11,20 +11,20 @@ import argparse
 
 def main(args):
 
-    seed = args.seed #np.random.randint(100000)
+    seed =  np.random.randint(100000) #args.seed
     np.random.seed(seed)
     mp.verbosity(0)
 
 
     Si = mp.Medium(index=3.4)
-    SiO2 = mp.Medium(index=1.44)
+    #SiO2 = mp.Medium(index=1.44)
 
     resolution = args.resolution #20 # (pixels/μm)
 
     minimum_length = args.minimum_length # 0.1 # (μm)
 
-    waveguide_width = args.waveguide_width #0.5 # (μm)
-    waveguide_length = args.waveguide_length #2.0 # (μm)
+    waveguide_width = args.waveguide_width - (1/(5*resolution)) #0.5 # (μm)
+    waveguide_length = args.waveguide_length - (1/(5*resolution)) #2.0 # (μm)
 
     design_region_length = args.design_region_length # 4 # (μm)
     design_region_width = args.design_region_width # 2 # (μm)
