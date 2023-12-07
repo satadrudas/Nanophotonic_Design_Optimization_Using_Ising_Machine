@@ -712,9 +712,10 @@ def main(args):
         design_data.append(arm_separation) #5
         design_data.append(np.array(1 - evaluation_history)) #6 to get the mean power from the objective function
         design_data.append(np.array(epivar_history)) #7
-        design_data.append(top_profile) #8
-        design_data.append(bottom_profile) #9
-        design_data.append(ref_profile) #10
+        design_data.append(np.array(frequencies)) #8
+        design_data.append(top_profile) #9
+        design_data.append(bottom_profile) #10
+        design_data.append(ref_profile) #11
 
         if mp.am_master():
 
