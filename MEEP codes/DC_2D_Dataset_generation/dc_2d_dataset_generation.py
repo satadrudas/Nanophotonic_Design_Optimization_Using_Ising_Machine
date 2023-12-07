@@ -8,7 +8,8 @@ from typing import NamedTuple
 import argparse
 import os
 
-
+if not os.path.exists('optimized_designs'):
+    os.makedirs('optimized_designs',  exist_ok=True)
 
 
 def main(args):
@@ -574,8 +575,7 @@ def main(args):
     mean = 0.0
     std=args.std
 
-    if not os.path.exists('optimized_designs'):
-        os.mkdir('optimized_designs')
+
 
     for i in range(args.desnum):
         design_data=[]
