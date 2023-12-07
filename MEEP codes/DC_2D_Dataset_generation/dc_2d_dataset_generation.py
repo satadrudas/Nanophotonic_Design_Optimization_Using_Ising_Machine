@@ -716,9 +716,11 @@ def main(args):
         design_data.append(bottom_profile) #9
         design_data.append(ref_profile) #10
 
-        np.save("optimized_designs/design_data"+str(i),np.array(design_data, dtype=object))
+        if mp.am_master():
+
+            np.save("optimized_designs1/design_data"+str(i),np.array(design_data, dtype=object))
         
-        
+         
 
 ########################################################################
 
