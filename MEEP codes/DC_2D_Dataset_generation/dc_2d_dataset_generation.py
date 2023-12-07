@@ -6,12 +6,14 @@ from autograd import numpy as npa, tensor_jacobian_product, grad
 import nlopt
 from typing import NamedTuple
 import argparse
+import os
+
 
 
 
 def main(args):
 
-    seed =  args.seed # when working with multiple nodes, the seed should be same for all processes. Read "https://meep.readthedocs.io/en/latest/Parallel_Meep/#optimization-studies-of-parallel-simulations"
+    seed =  args.seed
     np.random.seed(seed)
     mp.verbosity(0)
 
@@ -23,11 +25,11 @@ def main(args):
 
     minimum_length = args.minimum_length # 0.1 # (μm)
 
-    waveguide_width = args.waveguide_width - (1/(5*resolution)) #0.5 # (μm)
-    waveguide_length = args.waveguide_length - (1/(5*resolution)) #2.0 # (μm)
+    waveguide_width = args.waveguide_width  #0.5 # (μm)
+    waveguide_length = args.waveguide_length  #2.0 # (μm)
 
-    design_region_length = args.design_region_length # 4 # (μm)
-    design_region_width = args.design_region_width # 2 # (μm)
+    design_region_length = args.design_region_length - (1/(5*resolution))# 4 # (μm)
+    design_region_width = args.design_region_width - (1/(5*resolution))# 2 # (μm)
 
     arm_separation = 1.0
     pml_size = 1.0 # (μm)
@@ -572,6 +574,9 @@ def main(args):
     mean = 0.0
     std=args.std
 
+    if not os.path.exists('optimized_designs'):
+        os.mkdir('optimized_designs')
+
     for i in range(args.desnum):
         design_data=[]
 
@@ -699,7 +704,7 @@ def main(args):
         # design index, design, evaluation history, epivar history
             
         design_data.append(np.array(i)) #0
-        design_data.append(mapping(optimal_design_weights, eta_i, beta).reshape(Nx,Ny)) #1
+        design_data.append(optimal_design_weights) #1
         design_data.append(resolution) #2
         design_data.append(design_region_resolution) #3
         design_data.append(design_region_length) #4
@@ -711,8 +716,7 @@ def main(args):
         design_data.append(bottom_profile) #10
         design_data.append(ref_profile) #11
 
-
-        np.save("test_data/design_data"+str(i),np.array(design_data, dtype=object))
+        np.save("optimized_designs/design_data"+str(i),np.array(design_data, dtype=object))
         
         
 
