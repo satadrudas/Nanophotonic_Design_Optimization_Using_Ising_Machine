@@ -710,7 +710,7 @@ def main(args):
         design_data.append(design_region_length) #3
         design_data.append(design_region_width) #4
         design_data.append(arm_separation) #5
-        design_data.append(np.array(1 - evaluation_history)) #6 to get the mean power from the objective function
+        design_data.append(1.0 - np.array( evaluation_history)) #6 to get the mean power from the objective function
         design_data.append(np.array(epivar_history)) #7
         design_data.append(np.array(frequencies)) #8
         design_data.append(top_profile) #9
