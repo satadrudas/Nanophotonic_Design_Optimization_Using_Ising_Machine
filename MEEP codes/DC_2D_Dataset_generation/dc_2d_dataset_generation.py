@@ -8,9 +8,14 @@ from typing import NamedTuple
 import argparse
 import os
 
-if not os.path.exists('optimized_designs'):
-    os.makedirs('optimized_designs',  exist_ok=True)
+dir_path = 'optimized_designs/'
 
+if not os.path.exists(dir_path):
+    os.makedirs(dir_path,  exist_ok=True)
+
+file_name_template = "design_data{}"
+file_extension = '.npy' ## very important
+file_naming_counter = 1
 
 def main(args):
 
@@ -717,11 +722,16 @@ def main(args):
         design_data.append(bottom_profile) #10
         design_data.append(ref_profile) #11
 
+        global file_naming_counter
+
         if mp.am_master():
 
-            np.save("optimized_designs1/design_data"+str(i),np.array(design_data, dtype=object))
-        
-         
+            while os.path.isfile(dir_path+file_name_template.format(file_naming_counter)+file_extension):
+                file_naming_counter =file_naming_counter + 1
+
+            filename = file_name_template.format(file_naming_counter)
+
+            np.save(dir_path+filename,np.array(design_data, dtype=object))
 
 ########################################################################
 
