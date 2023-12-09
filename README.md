@@ -1,6 +1,9 @@
 # Inverse Design Otimization using Ising Machine
 ## Overview
-In this project we implement the optimization algorithm in ref [1] on an optoelectronic Ising machine that we built similar to the one in ref [2]. The difference is that we implement on a different hardware setup as opposed to D-Wave quantum annealers which were used as the Ising solver in [1]. Using the opto-electronic Ising Machine is advantageous since all-to-all connections can be implemented with it whereas in D-Wave computer only sparce connections are available. The optimization problem that we chose is 2D optimization of photonics devices.<br /><br/>
+In this project we implement the optimization algorithm in ref [1] on an optoelectronic Ising machine that we built similar to the one in ref [2]. The difference is that we implement on a Coherent Ising Machine (CIM) as opposed to D-Wave quantum annealers which were used as the Ising solver in [1]. Using the CIM is advantageous since all-to-all connections can be implemented with it whereas in D-Wave computer only sparce connections are available. The optimization problem that we chose is 2D optimization of photonics devices.<br /><br/>
+
+The followin is the experimental setup for the CIM at IIT Madras.<br/>
+![alt text](cim_experimental_setup.png)<br/><br/>
 
 The following image illustrates the algorithm in [1]. The changes in our project is we use a CIM instead of the D-Wave anealer. We are optimizing a size constrained Silicon Photonic 3dB directional coulpler.<br/>
 ![image](https://github.com/satadrudas98/Nanophotonic_Design_Optimization_Using_Ising_Machine/assets/38806771/6b5eb63e-4818-494e-88a3-87d099a43367)
