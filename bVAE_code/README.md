@@ -1,1 +1,2 @@
-Codes for the bVAE
+The notebook here is for trainnig a bVAE on the metagrating dataset from [Metanet](http://metanet.stanford.edu/). The traininng was done on 1000 dataset, which are not so similar. While the generated data is not that great, and noisy, when the generated designs are post processed by applying a gaussian blur followed by projection, the designs seems to be relatively decent. <br/><br/>
+TODO: Do it using the directional coupler dataset. Given that the designs are not as dissimilar as the metagratings, the generation quality will hopefully be better.
