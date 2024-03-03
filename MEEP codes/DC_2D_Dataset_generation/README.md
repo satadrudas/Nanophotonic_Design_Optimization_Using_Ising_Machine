@@ -1,3 +1,5 @@
+Current number of designs: 1142
+
 The files here were being used for testing different parameters for the dataset generation. Run the `dc_2d_dataset_generation.py` file for the generation of datasets using the following command `mpirun -np 5 python -m mpi4py dc_2d_dataset_generation.py | tee -a outputfile.txt`. Use different seeds for getting more varying designs.<br/><br/>
 Some of the generated designs are shown below:<br/>
 ![image](https://github.com/satadrudas98/Nanophotonic_Design_Optimization_Using_Ising_Machine/assets/38806771/08e0f5be-801e-4ba5-b3a3-61bf932679fe)
