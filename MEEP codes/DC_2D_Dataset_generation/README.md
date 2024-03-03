@@ -1,4 +1,4 @@
-Current number of designs: 1142
+Current number of designs: 1143
 
 The files here were being used for testing different parameters for the dataset generation. Run the `dc_2d_dataset_generation.py` file for the generation of datasets using the following command `mpirun -np 5 python -m mpi4py dc_2d_dataset_generation.py | tee -a outputfile.txt`. Use different seeds for getting more varying designs.<br/><br/>
 Some of the generated designs are shown below:<br/>
